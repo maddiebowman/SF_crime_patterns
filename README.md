@@ -1,4 +1,4 @@
-# SF_crime_patterns# Crime Patterns in Downtown San Francisco
+# Crime Patterns in Downtown San Francisco
 
 ## Instructions
 1. Clone repository -> open data folder -> open Police_Department_Incident_Reports.zip to expand to Police_Department_Incident_Reports.csv
