@@ -1,1 +1,0 @@
-# SF_crime_patterns
