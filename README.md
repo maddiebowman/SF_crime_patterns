@@ -1,7 +1,10 @@
 # Crime Patterns in Downtown San Francisco
 
 ## Instructions
-1. Clone repository -> open data folder -> open Police_Department_Incident_Reports.zip to expand to Police_Department_Incident_Reports.csv
+1. Clone repository → Open data folder → 
+Open Police_Department_Incident_Reports.zip to expand to → Police_Department_Incident_Reports.csv
+
+2. 
 
 ### Data Source
 [**The San Francisco Police Department’s (SFPD) Incident Report Dataset**](https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783/data_preview) 
@@ -11,6 +14,8 @@
 
 → Data is updated daily 10:00am PST
 * Code accurately accounts for new data as source is updated
+
+Data featured on the Map is accessed through an API endpoint in JSON format, limited to 1000 rows
 
 
 #### Overview
@@ -31,6 +36,22 @@ Provided are visualizations to help demonstrate the types of crime that are most
 
 
 ### Visualizations
+#### San Francisco Crime Map
+* Displays markers of incident reports from SF Data's GeoJSON API (1000 record limit)
+* Control created for toggling through data filtered by year (2019-2024)
 
+![San Francisco Crime Map](./images/leaflet_crime_map.png)
+![San Francisco Neighborhood Boundaries](./images/leaflet_neighborhood_boundaries.png)
+* Hovering over marker clusters will reveal the neighborhood's boundary outline
+* Once clicked, the marker will display details on that specific incident report
+
+![Crime Map Incident Markers](./images/leaflet_incident_markers.png)
+
+
+#### Least Safe Neighborhoods
+##### Bar Chart - Overall Incident Count by Neighborhood
+ ![Overall Incident Count Bar Chart](./images/overall_incident_count_bar_chart.png)
+ ##### Pie Chart - Highest Percentage of Incidents by Neighborhood (Top 15)
+ ![Neighborhood Pie Chart](./images/pie_chart_neighborhoods.png)
 
 #### Resources
