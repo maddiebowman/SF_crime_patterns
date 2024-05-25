@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Crime Heatmap Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <style>
+        #heatmap { max-width: 650px; margin: auto; height: 400px; }
+        #navigateBack { margin: 20px; }
+        .image-container {
+            text-align: center; /* Center align the images if that is preferred */
+            margin: 20px; /* Add some margin around images */
+        }
+    </style>
+</head>
+<body>
+    <button id="navigateBack" onclick="window.location.href='index.html'">Back to Main Map</button>
+    <div id="heatmap"></div>
+    
+    <!-- Image container for better organization and styling -->
+    <div class="image-container">
+        <img src="Heatmap_sb.png" alt="Heatmap second view" width="500">
+        <img src="Incidents_day_week.png" alt="Incidents by Day of the Week boxplot image" width="500">
+    </div>
+
+    <script src="js/app_hm.js"></script> 
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Map View</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+</head>
+<body>
+    <div id="controls">
+        <select id="category-select">
+            <option value="all">All Categories</option>
+        </select>
+        <button id="aboutButton" onclick="window.location.href='/about.html'">About</button>
+        <button id="placeholderButton1" onclick="window.location.href='/page3.html'">Placeholder 1</button>
+        <button id="navigateButton" onclick="window.location.href='/page4.html'">Go to Heatmap</button>
+        <button id="placeholderButton2" onclick="window.location.href='/page5.html'">Placeholder 2</button>
+        <button id="placeholderButton3" onclick="window.location.href='/page6.html'">Placeholder 3</button>
+    <div id="map-container">
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="js/app_map.js"></script>  <!-- Replace with the final file name -->
+   
+    
+</body>
+</html>

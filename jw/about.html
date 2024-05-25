@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div id="about-container">
+        <h1>About This Project</h1>
+        <p>
+            This project is a web application designed to visualize various data points on an interactive map.
+            Users can filter data by categories and navigate between different views including a heatmap.
+        </p>
+        <p>
+            The map is built using Leaflet.js, a powerful JavaScript library for interactive maps.
+            Data clustering is handled by the Leaflet MarkerCluster plugin, and D3.js is used for data manipulation and visualization.
+        </p>
+        <p>
+            For more information or to contribute to this project, please visit our <a href="https://github.com/your-repo">GitHub repository</a>.
+        </p>
+        
+        <h2>Endpoints Overview</h2>
+        <ul>
+            <li>/data: Get full data</li>
+            <li>/reduced_data: Get reduced sample data</li>
+            <li>/selected: Get selected data</li>
+            <li>/selected_<type>: Get data for a specific category (replace <code>&lt;type&gt;</code> with the category name)</li>
+        </ul>
+
+        <button id="backButton" onclick="window.location.href='/'">Back to Main Map</button>
+    </div>
+</body>
+</html>
