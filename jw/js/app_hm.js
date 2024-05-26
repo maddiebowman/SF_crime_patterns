@@ -1,11 +1,3 @@
-// const init = async () => {
-//     data = await(await fetch('http://127.0.0.1:5000/json')).json();
-
-//     console.log(data);
-
-// };
-
-// init();
 
 document.addEventListener('DOMContentLoaded', function () {
     const url = 'http://127.0.0.1:5000/reduced_data';  // Endpoint to fetch the data
@@ -63,23 +55,23 @@ function renderChart(seriesData) {
                 colorScale: {
                     ranges: [{
                         from: 0,
-                        to: 965,
-                        name: 'Low (0-965)',
+                        to: 276,
+                        name: 'Low (0-276)',
                         color: '#00A100'
                     }, {
-                        from: 966,
-                        to: 1274,
-                        name: 'Medium (966-1274)',
+                        from: 277,
+                        to: 353,
+                        name: 'Medium (277-353)',
                         color: '#128FD9'
                     }, {
-                        from: 1275,
-                        to: 1581,
-                        name: 'High (1275-1581)',
+                        from: 354,
+                        to: 430,
+                        name: 'High (354-430)',
                         color: '#FFB200'
                     },{
-                        from: 1582,
-                        to: 2000,
-                        name: 'Extreme (1582-2000)',
+                        from: 431,
+                        to: 700,
+                        name: 'Extreme (431-700)',
                         color: '#EA3546'
                     }]
                 }
