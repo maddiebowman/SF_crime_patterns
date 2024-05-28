@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
     <title>Crime Heatmap Visualization</title>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
 <body>
-    <button id="navigateBack" onclick="window.location.href='index.html'">Back to Main Map</button>
+    <button id="navigateBack" onclick="window.location.href='/'">Back to Main Map</button>
 
     <!-- Single row section for all visuals -->
     <div class="horizontal-section">
         <div id="heatmap"></div>
-        <img src="Heatmap_sb.png" alt="Heatmap second view">
-        <img src="Incidents_day_week.png" alt="Incidents by Day of the Week boxplot image">
-        <img src="Incidents_timeofday.png" alt="Incidents by Time of the Day boxplot image">
+        <img src="/images/heatmap_sb.png" alt="Heatmap second view">
+        <img src="/images/incidents_day_week.png" alt="Incidents by Day of the Week boxplot image">
+        <img src="/images/incidents_timeofday.png" alt="Incidents by Time of the Day boxplot image">
     </div>
 
-    <script src="js/app_hm.js"></script> 
+    <script src="/static/js/app_hm.js"></script>
 </body>
 </html>
-
