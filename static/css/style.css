@@ -262,29 +262,12 @@ th {
 }
 
 /* Styling for the single row layout -page4*/
-.horizontal-section {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1600px;
-    margin: 20px auto;
-}
-
 #heatmap {
     max-width: 1400px;
     width: 100%;
     height: 400px;
     margin: 20px;
 }
-
-.horizontal-section img {
-    max-width: 500px;
-    width: 100%;
-    margin: 10px;
-}
-
 /* Responsive behavior */
 @media (max-width: 1200px) {
     .horizontal-section {
