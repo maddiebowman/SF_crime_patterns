@@ -1,7 +1,7 @@
 /* Overall body styling */
 body {
-    margin: 0;
-    padding: 0;
+    margin: 20;
+    padding:20;
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
@@ -10,6 +10,39 @@ body {
     width: 100vw;   /* Full viewport width */
 }
 
+/* Styling for SVG */
+svg {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Styling for buttons */
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: hsla(192, 80%, 49%, 0.882);
+    color: rgba(4, 1, 14, 0.882);
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #5fb300;
+}
+
+/* Page 6 container styling */
+#page6-container {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);  /* Semi-transparent background for better visibility */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    margin: 80px auto 40px auto;  /* Add top margin to move title down */
+    max-width: 800px;
+    border-radius: 10px;  /* Rounded corners for a modern look */
+    text-align: center;  /* Center-align the text */
+}
 /* Style for the controls container */
 #controls {
     width: 100%;  /* Full width */
@@ -24,6 +57,40 @@ body {
     left: 0;
     z-index: 1000;  /* Ensuring it stays on top of map elements */
     align-items: left;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Progress bar container */
+#progress-container {
+    position: relative;
+    width: 80%;
+    height: 20px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+/* Progress bar */
+#progress-bar {
+    height: 100%;
+    background-color: #4c9baf;
+    width: 0;
+    position: relative;
+}
+
+/* Progress text */
+#progress-text {
+    font-size: 12px; /* Reduced font size */
+    font-family: Arial, sans-serif;
+    color: hsl(313, 64%, 85%);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    white-space: nowrap;
 }
 
 /* Container for the map */
@@ -43,7 +110,7 @@ body {
     box-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
 
-/* Styling for dropdown and buttons */
+/* Specific styles for dropdown and buttons */
 #category-select, #navigateButton, #placeholderButton1, #placeholderButton2, #placeholderButton3, #placeholderButton4, #aboutButton, #backButton {
     padding: 10px;
     background-color: white;
@@ -51,7 +118,6 @@ body {
     border-radius: 5px;
     font-size: 14px;  
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;  /* Smooth transitions for hover effects */
 }
 
 /* Specific button styles */

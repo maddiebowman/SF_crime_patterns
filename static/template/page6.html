@@ -3,17 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 6</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Crime Data Bubble Animation</title>
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
     <div id="page6-container">
-        <h1>Page 6</h1>
-        <p>
-            This is Page 6 content.
-        </p>
-        
-        <button id="backButton" onclick="window.location.href='/'">Back to Main Map</button>
+        <h1>Crime Data Bubble Animation</h1>
     </div>
+
+    <svg></svg>
+    
+    <div id="progress-container">
+        <div id="progress-bar">
+            <div id="progress-bar-inner"></div>
+            <span id="progress-text"></span>
+        </div>
+    </div>
+    
+    <div id="controls">
+        <button id="play-button">Play</button>
+        <button id="pause-button">Pause</button>
+    </div>
+
+    <button id="backButton" onclick="window.location.href='/'">Back to Main Map</button>
+    
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="/static/js/script.js"></script>
 </body>
 </html>
