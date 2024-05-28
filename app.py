@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, send_from_directory
+from flask import Flask, jsonify, request,send_from_directory
 from pymongo import MongoClient
 from flask_cors import CORS
 import logging
@@ -92,29 +92,60 @@ def get_type_json(type):
     data = [{key: value for key, value in doc.items() if key != '_id'} for doc in cursor]
     return jsonify(data)
 
-@app.route("/aggregated_data", methods=['GET']) #End point for bubble chart
+@app.route("/aggregated_data", methods=['GET'])  # Endpoint for bubble chart
 def get_aggregated_data():
-    app.logger.debug("Fetching aggregated data")
-    cursor = collection.find()
-    data = [{key: value for key, value in doc.items() if key != '_id'} for doc in cursor]
-    
-    df = pd.DataFrame(data)
-    
-    # Convert 'Incident Date' to datetime and extract year and month
-    df['Incident Date'] = pd.to_datetime(df['Incident Date'], errors='coerce')
-    df['year'] = df['Incident Date'].dt.year
-    df['month'] = df['Incident Date'].dt.month
-    
-    # Group by year, month, and category and count occurrences
-    aggregated_df = df.groupby(['year', 'month', 'Incident Category']).size().reset_index(name='count')
-    
-    # Rename columns to match the required format
-    aggregated_df.rename(columns={'Incident Category': 'category'}, inplace=True)
-    
-    # Convert dataframe to a list of dictionaries
-    aggregated_data = aggregated_df.to_dict('records')
-    
-    return jsonify(aggregated_data)
+    app.logger.debug("Fetching aggregated data from collection_full")
+
+    # Get the list of categories from the query parameters
+    categories = request.args.getlist('category')
+
+    # If no categories are provided, use the default set
+    if not categories:
+        categories = ["Larceny Theft", "Robbery", "Weapons Offense", "Burglary", "Arson", "Missing Person", "Motor Vehicle Theft", "Homicide"]
+
+    app.logger.debug(f"Categories: {categories}")
+
+    try:
+        cursor = collection_full.find()
+        data = [{key: value for key, value in doc.items() if key != '_id'} for doc in cursor]
+
+        if not data:
+            app.logger.error("No data found in MongoDB collection.")
+            return jsonify({"error": "No data found"}), 404
+        
+        df = pd.DataFrame(data)
+        app.logger.debug("Data loaded into DataFrame")
+
+        # Check if 'Incident Date' and 'Incident Category' columns exist
+        if 'Incident Date' not in df.columns or 'Incident Category' not in df.columns:
+            app.logger.error("'Incident Date' or 'Incident Category' column missing in data.")
+            return jsonify({"error": "'Incident Date' or 'Incident Category' column missing in data."}), 400
+
+        # Convert 'Incident Date' to datetime and extract year and month
+        df['Incident Date'] = pd.to_datetime(df['Incident Date'], errors='coerce')
+        df['year'] = df['Incident Date'].dt.year
+        df['month'] = df['Incident Date'].dt.month
+
+        # Filter by the given categories
+        df = df[df['Incident Category'].isin(categories)]
+        app.logger.debug("Data filtered by categories")
+
+        # Group by year, month, and category and count occurrences
+        aggregated_df = df.groupby(['year', 'month', 'Incident Category']).size().reset_index(name='count')
+
+        # Rename columns to match the required format
+        aggregated_df.rename(columns={'Incident Category': 'category'}, inplace=True)
+        app.logger.debug("Data aggregated and renamed")
+
+        # Convert dataframe to a list of dictionaries
+        aggregated_data = aggregated_df.to_dict('records')
+        app.logger.debug("Data converted to list of dictionaries")
+
+        return jsonify(aggregated_data)
+    except Exception as e:
+        app.logger.error(f"Error during data aggregation: {e}")
+        return jsonify({"error": "Internal server error"}), 500
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
