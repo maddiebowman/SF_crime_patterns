@@ -1,7 +1,7 @@
 /* Overall body styling */
 body {
-    margin: 20;
-    padding:20;
+    margin: 0;
+    padding:0;
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
@@ -218,14 +218,32 @@ button:hover {
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 14px;  
+    font-size: 12px;  
     text-align: left;
     background-color: #007bff;
     color: white;
-    border-radius: 15px;  /* More rounded corners */
+    border-radius: 10px;  /* More rounded corners */
     cursor: pointer;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+#group-members {
+    font-size: 16px;
+}
 #about-container button:hover, #page3-container button:hover, #page4-container button:hover, #page5-container button:hover, #page6-container button:hover {
     background-color: #0056b3;
     transform: scale(1.05);  /* Slightly increase the size on hover */
