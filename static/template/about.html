@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="about-container">
-        <h1>About This Project</h1>
+        <h3>About This Project</h3>
         <p>
             This project is a web application designed to visualize various data points on an interactive map.
             Users can filter data by categories and navigate between different views including a heatmap.
@@ -21,17 +21,44 @@
             For more information or to contribute to this project, please visit our <a href="https://github.com/maddiebowman/SF_crime_patterns">GitHub repository</a>.
         </p>
         
-        <h2>API Endpoints</h2>
-        <ul>
-            <li><a href="http://127.0.0.1:5000/data">/data: Get full data</a></li>
-            <li><a href="http://127.0.0.1:5000/reduced_data">/reduced_data: Get reduced sample data</a></li>
-            <li><a href="http://127.0.0.1:5000/aggregated_data">/reduced_data: Get data for the bubble animation</a></li>
-            <li><a href="http://127.0.0.1:5000/selected">/selected: Get selected data</a></li>
-            <li>/selected_<code>&lt;type&gt;</code>: Get data for a specific category (replace <code>&lt;type&gt;</code> with the category name)</li>
-        </ul>
-
+        <h4>API Endpoints</h4>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <tr>
+                <th>Endpoint</th>
+                <th>Description</th>
+                <th>Usage</th>
+            </tr>
+            <tr>
+                <td><a href="http://127.0.0.1:5000/data">/data</a></td>
+                <td>Get full data from the database. This endpoint retrieves all records from the incidents_full collection.</td>
+                <td>This endpoint is used for the crime projection.</td>
+            </tr>
+            <tr>
+                <td><a href="http://127.0.0.1:5000/reduced_data">/reduced_data</a></td>
+                <td>Get reduced sample data. This endpoint retrieves all records from the incidents collection, which contains a smaller, sample dataset.</td>
+                <td>This endpoint is used for the Leaflet map and ApexCharts heatmap.</td>
+            </tr>
+            <tr>
+                <td><a href="http://127.0.0.1:5000/aggregated_data">/aggregated_data</a></td>
+                <td>Get aggregated data. This endpoint aggregates data by year, month, and category, providing counts of incidents for the bubble animation visualization.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a href="http://127.0.0.1:5000/selected">/selected</a></td>
+                <td>Get selected data. This endpoint retrieves specific fields (Latitude, Longitude, Incident Datetime, Incident Description, Analysis Neighborhood, Incident Category, Incident Year) from the incidents collection.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>/selected_<code>&lt;type&gt;</code></td>
+                <td>Get data for a specific category. Replace <code>&lt;type&gt;</code> with the category name to retrieve records that match a specific incident category.</td>
+                <td></td>
+            </tr>
+        </table>
+        <h4>Group Members</h4>
+        <p id="group-members">
+            Brian Lee, Justin Bein, Jinlu Wang, Maddie Bowman, Mo Dai, Sakurako Kikuchi
+        </p>
         <button id="backButton" onclick="window.location.href='/'">Back to Main Map</button>
     </div>
 </body>
 </html>
-
