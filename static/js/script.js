@@ -5,7 +5,7 @@ fetch('http://127.0.0.1:5000/aggregated_data')
         // Proceed with the D3 code using the fetched data
         const width = window.innerWidth * 0.8;
         const height = window.innerHeight * 0.8;
-        const margin = { top: 20, right: 150, bottom: 80, left: 150 };
+        const margin = { top: 20, right: 150, bottom: 80, left: 200 };
 
         const svg = d3.select("svg")
             .attr("width", width)
