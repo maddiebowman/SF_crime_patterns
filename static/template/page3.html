@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page 3</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+    
 </head>
 <body>
     <div id="page3-container">
@@ -14,6 +21,50 @@
         </p>
         
         <button id="backButton" onclick="window.location.href='/'">Back to Main Map</button>
+        <br>
     </div>
+
+    <div style="display: flex;">
+        <div style="display: block;">
+            <img src="https://github.com/maddiebowman/SF_crime_patterns/raw/main/images/Trends_bar_chart.png" alt="Bar Chart" width="600" height="350" > 
+            <img src="https://github.com/maddiebowman/SF_crime_patterns/raw/main/images/Trends_line_chart.png" alt="line Chart" width="500" height="350">
+        </div>
+        
+    </div>         
+    
+    <div style="width: 50%;">
+        <select id="incident-select" style="display: flex;" >
+            <option value="all">all incidents</option>
+            <option value="Larceny Theft">Larceny Theft</option>
+            <option value="Malicious Mischief">Malicious Mischief</option>
+            <option value="Assault">Assault</option>
+            <option value="Burglary">Burglary</option>
+            <option value="Motor Vehicle Theft">Motor Vehicle Theft</option>
+            <option value="Drug Offense">Drug Offense</option>
+            <option value="Robbery">Robbery</option>
+            <option value="Missing Person">Missing Person</option>
+            <option value="Offences Against The Family And Children">Offences Against The Family And Children</option>
+            <option value="Weapons Offense">Weapons Offense</option>
+            <option value="Arson">Arson</option>
+            <option value="Vandalism">Vandalism</option>
+            <option value="Sex Offense">Sex Offense</option>
+            <option value="Rape">Rape</option>
+            <option value="Homicide">Homicide</option>
+            <option value="Human Trafficking">Human Trafficking</option>
+        </select>
+    </div>
+        <div id="bar" style="width: 50%;"> </div>
+
+        <script src="/static/js/plots.js" ></script>
+
+    
+    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    
+    
+    <!-- <script src="js/logic_page3.js"></script>      -->
+
+
 </body>
 </html>
