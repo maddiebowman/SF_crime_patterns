@@ -1,10 +1,12 @@
 # Crime Patterns in Downtown San Francisco
 
 ## Instructions
-1. Clone repository → Open data folder → 
-Open Police_Department_Incident_Reports.zip to expand to → Police_Department_Incident_Reports.csv
+After cloning the repository, open the 'data' folder → 
+Select 'Police_Department_Incident_Reports.zip', expanding the file to → 'Police_Department_Incident_Reports.csv'
 
-2. 
+1. Run analysis/crime_db.ipynb for cleaned database creation
+2. Run analysis/analysis.ipynb for crime_db analysis results and visualizations
+3. In terminal, run 'python app.py' to launch flask app
 
 ### Data Source
 [**The San Francisco Police Department’s (SFPD) Incident Report Dataset**](https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783/data_preview) 
@@ -15,7 +17,7 @@ Open Police_Department_Incident_Reports.zip to expand to → Police_Department_I
 → Data is updated daily 10:00am PST
 * Code accurately accounts for new data as source is updated
 
-Data featured on the Map is accessed through an API endpoint in JSON format, limited to 1000 rows
+Data featured on the Map is accessed through an API endpoint, in JSON format, with results limited to a sample of 1000 rows
 
 
 #### Overview
@@ -55,3 +57,4 @@ Provided are visualizations to help demonstrate the types of crime that are most
  ![Neighborhood Pie Chart](./images/pie_chart_neighborhoods.png)
 
 #### Resources
+Leaflet Marker Cluster Documentation: https://github.com/Leaflet/Leaflet.markercluster

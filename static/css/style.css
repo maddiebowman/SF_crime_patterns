@@ -1,10 +1,215 @@
+/* Overall body styling */
 body {
-  padding: 0;
-  margin: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevents scrollbars from appearing */
+    height: 100vh;  /* Full viewport height */
+    width: 100vw;   /* Full viewport width */
 }
 
-#map,
-body,
-html {
-  height: 100%;
+/* Style for the controls container */
+#controls {
+    width: 100%;  /* Full width */
+    padding: 10px 20px;  /* Padding inside the controls area */
+    background-color: rgba(255, 255, 255, 0.8);  /* Semi-transparent background for better visibility */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: row;
+    gap: 5px;  /* Space between elements */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;  /* Ensuring it stays on top of map elements */
+    align-items: left;
+}
+
+/* Container for the map */
+#map-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    height: calc(100% - 60px); /* Adjust height to account for the controls */
+    width: 100%;
+    margin-top: 60px; /* Ensure there's space at the top for the controls */
+}
+
+/* Style for the map */
+#map {
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+/* Styling for dropdown and buttons */
+#category-select, #navigateButton, #placeholderButton1, #placeholderButton2, #placeholderButton3, #placeholderButton4, #aboutButton, #backButton {
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;  
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;  /* Smooth transitions for hover effects */
+}
+
+/* Specific button styles */
+#navigateButton, #aboutButton, #backButton {
+    background-color: #007bff;
+    color: white;
+}
+
+#placeholderButton1 {
+    background-color: #28a745;
+    color: white;
+}
+
+#placeholderButton2 {
+    background-color: #ffc107;
+    color: white;
+}
+
+#placeholderButton3 {
+    background-color: #dc3545;
+    color: white;
+}
+
+#placeholderButton4 {
+    background-color: #6f42c1;
+    color: white;
+}
+
+/* Hover effects for buttons */
+#navigateButton:hover, #aboutButton:hover, #backButton:hover, 
+#placeholderButton1:hover, #placeholderButton2:hover, #placeholderButton3:hover, #placeholderButton4:hover {
+    background-color: darken(#007bff, 10%);
+    transform: scale(1.05);  /* Slightly increase the size on hover */
+}
+
+/* Shapes for the buttons */
+#navigateButton, #placeholderButton1, #placeholderButton2, #placeholderButton3, #placeholderButton4, #aboutButton, #backButton {
+    border-radius: 15px;  /* More rounded corners */
+}
+
+/* Responsive behavior */
+@media (max-width: 600px) {
+    #controls {
+        flex-direction: column;  /* Stack controls vertically on small screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    #category-select, #navigateButton, #placeholderButton1, #placeholderButton2, #placeholderButton3, #placeholderButton4, #aboutButton, #backButton {
+        font-size: 12px;  /* Smaller font on smaller devices */
+        width: 100%;      /* Full width for buttons and dropdown */
+    }
+
+    #map-container {
+        height: calc(100% - 150px); /* Adjust height to account for stacked controls */
+        margin-top: 150px; /* Ensure there's space at the top for the stacked controls */
+    }
+}
+
+/* About, Page 3, Page 4, Page 5, Page 6 specific styles */
+#about-container, #page3-container, #page4-container, #page5-container, #page6-container {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);  /* Semi-transparent background for better visibility */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    margin: 20px auto;  /* Center the container */
+    max-width: 800px;
+    border-radius: 10px;  /* Rounded corners for a modern look */
+}
+
+#about-container h1, #about-container h2,
+#page3-container h1, #page3-container h2,
+#page4-container h1, #page4-container h2,
+#page5-container h1, #page5-container h2,
+#page6-container h1, #page6-container h2 {
+    color: #333;
+}
+
+#about-container p, #page3-container p, #page4-container p, #page5-container p, #page6-container p {
+    color: #555;
+    line-height: 1.6;
+}
+
+#about-container ul, #page3-container ul, #page4-container ul, #page5-container ul, #page6-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#about-container ul li, #page3-container ul li, #page4-container ul li, #page5-container ul li, #page6-container ul li {
+    background: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the back button to match other buttons */
+#about-container button, #page3-container button, #page4-container button, #page5-container button, #page6-container button {
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;  
+    text-align: left;
+    background-color: #007bff;
+    color: white;
+    border-radius: 15px;  /* More rounded corners */
+    cursor: pointer;
+}
+
+#about-container button:hover, #page3-container button:hover, #page4-container button:hover, #page5-container button:hover, #page6-container button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);  /* Slightly increase the size on hover */
+}
+
+@media (max-width: 600px) {
+    #about-container, #page3-container, #page4-container, #page5-container, #page6-container {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    #about-container button, #page3-container button, #page4-container button, #page5-container button, #page6-container button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Styling for the single row layout -page4*/
+.horizontal-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1600px;
+    margin: 20px auto;
+}
+
+#heatmap {
+    max-width: 1400px;
+    width: 100%;
+    height: 400px;
+    margin: 20px;
+}
+
+.horizontal-section img {
+    max-width: 500px;
+    width: 100%;
+    margin: 10px;
+}
+
+/* Responsive behavior */
+@media (max-width: 1200px) {
+    .horizontal-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .horizontal-section img, #heatmap {
+        max-width: 100%;
+        margin: 10px;
+    }
 }
