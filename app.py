@@ -36,11 +36,6 @@ def page4():
     app.logger.debug("Serving page4.html")
     return send_from_directory(app.static_folder + '/template', 'page4.html')
 
-@app.route("/page5")
-def page5():
-    app.logger.debug("Serving page5.html")
-    return send_from_directory(app.static_folder + '/template', 'page5.html')
-
 @app.route("/page6")
 def page6():
     app.logger.debug("Serving page6.html")
