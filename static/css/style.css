@@ -184,6 +184,8 @@ button:hover {
     margin: 20px auto;  /* Center the container */
     max-width: 800px;
     border-radius: 10px;  /* Rounded corners for a modern look */
+    overflow-y: auto;  /* Allows vertical scrolling */
+    max-height: calc(100vh - 40px); /* Ensures it fits within the viewport */
 }
 
 #about-container h1, #about-container h2,
