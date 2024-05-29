@@ -5,24 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
     <link rel="stylesheet" href="/static/css/style.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #about-container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto; /* Adds margin to center the container and avoid touching the edges */
+            overflow-y: auto; /* Enables vertical scrolling */
+            max-height: calc(100vh - 40px); /* Ensures the container fits within the viewport */
+        }
+        h1, h2 {
+            margin-top: 20px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        #group-members {
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);  /* Slightly increase the size on hover */
+        }
+    </style>
 </head>
 <body>
     <div id="about-container">
         <h3>About This Project</h3>
         <p>
-            This project is a web application designed to visualize various data points on an interactive map.
-            Users can filter data by categories and navigate between different views including a heatmap.
+            This project is a web application designed to visualize various data points on an interactive map and other interactive visuals.
+            Users can filter data by categories and navigate between different views including a heatmap and bar chart.
         </p>
         <p>
-            The map is built using Leaflet.js, a powerful JavaScript library for interactive maps.
+            The map is built using Leaflet.js.
             Data clustering is handled by the Leaflet MarkerCluster plugin, and D3.js is used for data manipulation and visualization.
         </p>
         <p>
-            For more information or to contribute to this project, please visit our <a href="https://github.com/maddiebowman/SF_crime_patterns">GitHub repository</a>.
+            For more information, please visit our <a href="https://github.com/maddiebowman/SF_crime_patterns">GitHub repository</a>.
         </p>
         
         <h4>API Endpoints</h4>
-        <table border="1" cellpadding="10" cellspacing="0">
+        <table>
             <tr>
                 <th>Endpoint</th>
                 <th>Description</th>
@@ -40,13 +87,13 @@
             </tr>
             <tr>
                 <td><a href="http://127.0.0.1:5000/aggregated_data">/aggregated_data</a></td>
-                <td>Get aggregated data. This endpoint aggregates data by year, month, and category, providing counts of incidents for the bubble animation visualization.</td>
-                <td></td>
+                <td>Get aggregated data. This endpoint aggregates data by year, month, and category, providing counts of incidents based on the full dataset.</td>
+                <td>This end point is used for the bubble animation visulization.</td>
             </tr>
             <tr>
                 <td><a href="http://127.0.0.1:5000/selected">/selected</a></td>
                 <td>Get selected data. This endpoint retrieves specific fields (Latitude, Longitude, Incident Datetime, Incident Description, Analysis Neighborhood, Incident Category, Incident Year) from the incidents collection.</td>
-                <td></td>
+                <td>Further narrowed down the fields from reduced_data.</td>
             </tr>
             <tr>
                 <td>/selected_<code>&lt;type&gt;</code></td>
@@ -62,4 +109,3 @@
     </div>
 </body>
 </html>
-
