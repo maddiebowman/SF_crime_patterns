@@ -1,7 +1,7 @@
 /* Overall body styling */
 body {
     margin: 0;
-    padding:0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
@@ -176,8 +176,8 @@ button:hover {
     }
 }
 
-/* About, Page 3, Page 4, Page 5, Page 6 specific styles */
-#about-container, #page3-container, #page4-container, #page5-container, #page6-container {
+/* About, Page 3, Page 4, Page 6 specific styles */
+#about-container, #page3-container, #page4-container, #page6-container {
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.9);  /* Semi-transparent background for better visibility */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
@@ -191,22 +191,21 @@ button:hover {
 #about-container h1, #about-container h2,
 #page3-container h1, #page3-container h2,
 #page4-container h1, #page4-container h2,
-#page5-container h1, #page5-container h2,
 #page6-container h1, #page6-container h2 {
     color: #333;
 }
 
-#about-container p, #page3-container p, #page4-container p, #page5-container p, #page6-container p {
+#about-container p, #page3-container p, #page4-container p, #page6-container p {
     color: #555;
     line-height: 1.6;
 }
 
-#about-container ul, #page3-container ul, #page4-container ul, #page5-container ul, #page6-container ul {
+#about-container ul, #page3-container ul, #page4-container ul, #page6-container ul {
     list-style-type: none;
     padding: 0;
 }
 
-#about-container ul li, #page3-container ul li, #page4-container ul li, #page5-container ul li, #page6-container ul li {
+#about-container ul li, #page3-container ul li, #page4-container ul li, #page6-container ul li {
     background: #f9f9f9;
     margin: 5px 0;
     padding: 10px;
@@ -215,7 +214,7 @@ button:hover {
 }
 
 /* Styling for the back button to match other buttons */
-#about-container button, #page3-container button, #page4-container button, #page5-container button, #page6-container button {
+#about-container button, #page3-container button, #page4-container button, #page6-container button {
     padding: 10px;
     background-color: white;
     border: 1px solid #ccc;
@@ -246,24 +245,25 @@ th {
 #group-members {
     font-size: 16px;
 }
-#about-container button:hover, #page3-container button:hover, #page4-container button:hover, #page5-container button:hover, #page6-container button:hover {
+
+#about-container button:hover, #page3-container button:hover, #page4-container button:hover, #page6-container button:hover {
     background-color: #0056b3;
     transform: scale(1.05);  /* Slightly increase the size on hover */
 }
 
 @media (max-width: 600px) {
-    #about-container, #page3-container, #page4-container, #page5-container, #page6-container {
+    #about-container, #page3-container, #page4-container, #page6-container {
         padding: 10px;
         margin: 10px;
     }
 
-    #about-container button, #page3-container button, #page4-container button, #page5-container button, #page6-container button {
+    #about-container button, #page3-container button, #page4-container button, #page6-container button {
         width: 100%;
         padding: 10px;
     }
 }
 
-/* Styling for the single row layout -page4*/
+/* Styling for the single row layout -page4 */
 #heatmap {
     max-width: 1400px;
     width: 100%;
