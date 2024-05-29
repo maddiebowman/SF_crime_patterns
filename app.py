@@ -144,3 +144,6 @@ def get_aggregated_data():
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
+
+#If the 5000 port is already running, use $lsof -i :5000 to list the active PID. 
+    #Then $kill -9 [PID] (replace [PID] with the number listed.)
