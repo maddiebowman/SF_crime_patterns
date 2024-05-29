@@ -14,50 +14,49 @@
     
 </head>
 <body>
-    <div id="page3-container">
-        <h1>Page 3</h1>
-        <p>
-            This is Page 3 content.
-        </p>
+    <button id="backButton" onclick="window.location.href='/'">Back to Main Map</button>
+
+    <!-- <div id="page3-container"> -->
+    <h1 style="margin-left: 100px;"> Crime Trends</h1>
+
         
-        <button id="backButton" onclick="window.location.href='/'">Back to Main Map</button>
-        <br>
-    </div>
+    <br>
+    <!-- </div> -->
 
     <div style="display: flex;">
-        <div style="display: block;">
-            <img src="https://github.com/maddiebowman/SF_crime_patterns/raw/main/images/Trends_bar_chart.png" alt="Bar Chart" width="600" height="350" > 
-            <img src="https://github.com/maddiebowman/SF_crime_patterns/raw/main/images/Trends_line_chart.png" alt="line Chart" width="500" height="350">
-        </div>
+        <!-- <div style="display: block;"> -->
+            <img src="https://github.com/maddiebowman/SF_crime_patterns/raw/main/images/Trends_bar_chart.png" alt="Bar Chart" width="600" height="500" style="margin-left: 100px;"> 
+            <!-- <img src="https://github.com/maddiebowman/SF_crime_patterns/raw/main/images/Trends_line_chart.png" alt="line Chart" width="500" height="350"> -->
+        <!-- </div> -->
         
-    </div>         
     
-    <div style="width: 50%;">
-        <select id="incident-select" style="display: flex;" >
-            <option value="all">all incidents</option>
-            <option value="Larceny Theft">Larceny Theft</option>
-            <option value="Malicious Mischief">Malicious Mischief</option>
-            <option value="Assault">Assault</option>
-            <option value="Burglary">Burglary</option>
-            <option value="Motor Vehicle Theft">Motor Vehicle Theft</option>
-            <option value="Drug Offense">Drug Offense</option>
-            <option value="Robbery">Robbery</option>
-            <option value="Missing Person">Missing Person</option>
-            <option value="Offences Against The Family And Children">Offences Against The Family And Children</option>
-            <option value="Weapons Offense">Weapons Offense</option>
-            <option value="Arson">Arson</option>
-            <option value="Vandalism">Vandalism</option>
-            <option value="Sex Offense">Sex Offense</option>
-            <option value="Rape">Rape</option>
-            <option value="Homicide">Homicide</option>
-            <option value="Human Trafficking">Human Trafficking</option>
-        </select>
-    </div>
-        <div id="bar" style="width: 50%;"> </div>
+        <div>
+            <select id="incident-select" style="width: 100%;">
+                <option value="all">All incidents</option>
+                <option value="Larceny Theft">Larceny Theft</option>
+                <option value="Malicious Mischief">Malicious Mischief</option>
+                <option value="Assault">Assault</option>
+                <option value="Burglary">Burglary</option>
+                <option value="Motor Vehicle Theft">Motor Vehicle Theft</option>
+                <option value="Drug Offense">Drug Offense</option>
+                <option value="Robbery">Robbery</option>
+                <option value="Missing Person">Missing Person</option>
+                <option value="Offences Against The Family And Children">Offences Against The Family And Children</option>
+                <option value="Weapons Offense">Weapons Offense</option>
+                <option value="Arson">Arson</option>
+                <option value="Vandalism">Vandalism</option>
+                <option value="Sex Offense">Sex Offense</option>
+                <option value="Rape">Rape</option>
+                <option value="Homicide">Homicide</option>
+                <option value="Human Trafficking">Human Trafficking</option>
+            </select>
+        </div>
+            <div id="bar" style="width: 100%;" > </div>
 
-        <script src="/static/js/plots.js" ></script>
+            <script src="/static/js/plots.js" ></script>
 
-    
+    </div> 
+        
     
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
