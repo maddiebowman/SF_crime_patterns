@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Create marker cluster group
     let markers = L.markerClusterGroup();
     let layers = {};
+    let markerClustersByYear = {};
+    let markerClustersByNeighborhood = {};
+
+    // Define years to include in dropdown, starting with most current (2024)
+    let years = [2024, 2023, 2022, 2021, 2020, 2019];
 
     // Get the incident data with d3
     d3.json(incidentUrl).then(function(response) {
@@ -28,6 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
             let latitude = parseFloat(incident.Latitude);
             let longitude = parseFloat(incident.Longitude);
             let category = incident["Incident Category"] || 'Other';
+            let incidentYear = new Date(incident["Incident Datetime"]).getFullYear();
+            let neighborhood = incident["Analysis Neighborhood"] || 'Other';
 
             // Check for valid latitude and longitude
             if (!isNaN(latitude) && !isNaN(longitude)) {
@@ -36,31 +43,57 @@ document.addEventListener('DOMContentLoaded', function () {
                     <strong>Incident Date:</strong> ${incident["Incident Datetime"]}<br>
                     <strong>Category:</strong> ${category}<br>
                     <strong>Description:</strong> ${incident["Incident Description"]}<br>
-                    <strong>Neighborhood:</strong> ${incident["Analysis Neighborhood"]}
+                    <strong>Neighborhood:</strong> ${neighborhood}
                 `);
 
-                // Add the marker to the cluster group
+                // Add the marker to the category cluster group
                 if (!layers[category]) {
                     layers[category] = L.layerGroup();
                 }
                 layers[category].addLayer(marker);
+
+                // Add the marker to the year cluster group
+                if (!markerClustersByYear[incidentYear]) {
+                    markerClustersByYear[incidentYear] = L.layerGroup();
+                }
+                markerClustersByYear[incidentYear].addLayer(marker);
+
+                // Add the marker to the neighborhood cluster group
+                if (!markerClustersByNeighborhood[neighborhood]) {
+                    markerClustersByNeighborhood[neighborhood] = L.layerGroup();
+                }
+                markerClustersByNeighborhood[neighborhood].addLayer(marker);
             }
         });
 
-        // Populate the dropdown with categories
-        const selectElement = document.getElementById('category-select');
+        // Populate the category dropdown
+        const categorySelectElement = document.getElementById('category-select');
         Object.keys(layers).forEach(category => {
             const option = new Option(category, category);
-            selectElement.add(option);
+            categorySelectElement.add(option);
         });
 
-        // Add the marker cluster layer to the map
-        myMap.addLayer(markers);
+        // Populate the year dropdown
+        const yearSelectElement = document.getElementById('year-select');
+        years.forEach(year => {
+            const option = new Option(year, year);
+            yearSelectElement.add(option);
+        });
+
+        // Populate the neighborhood dropdown
+        const neighborhoodSelectElement = document.getElementById('neighborhood-select');
+        Object.keys(markerClustersByNeighborhood).forEach(neighborhood => {
+            const option = new Option(neighborhood, neighborhood);
+            neighborhoodSelectElement.add(option);
+        });
 
         // Add all layers to the markers cluster initially
         Object.values(layers).forEach(layer => {
             markers.addLayer(layer);
         });
+
+        // Add the marker cluster layer to the map
+        myMap.addLayer(markers);
     });
 
     // Get the neighborhood data with d3
@@ -91,8 +124,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Handle category selection and filtering
-    const selectElement = document.getElementById('category-select');
-    selectElement.addEventListener('change', function() {
+    const categorySelectElement = document.getElementById('category-select');
+    categorySelectElement.addEventListener('change', function() {
         const selectedCategory = this.value;
         markers.clearLayers(); // Clear all markers
         if (selectedCategory === 'all') {
@@ -101,6 +134,34 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         } else {
             markers.addLayer(layers[selectedCategory]);
+        }
+    });
+
+    // Handle year selection and filtering
+    const yearSelectElement = document.getElementById('year-select');
+    yearSelectElement.addEventListener('change', function() {
+        const selectedYear = this.value;
+        markers.clearLayers(); // Clear all markers
+        if (selectedYear === 'all') {
+            Object.values(markerClustersByYear).forEach(layer => {
+                markers.addLayer(layer);
+            });
+        } else {
+            markers.addLayer(markerClustersByYear[selectedYear]);
+        }
+    });
+
+    // Handle neighborhood selection and filtering
+    const neighborhoodSelectElement = document.getElementById('neighborhood-select');
+    neighborhoodSelectElement.addEventListener('change', function() {
+        const selectedNeighborhood = this.value;
+        markers.clearLayers(); // Clear all markers
+        if (selectedNeighborhood === 'all') {
+            Object.values(markerClustersByNeighborhood).forEach(layer => {
+                markers.addLayer(layer);
+            });
+        } else {
+            markers.addLayer(markerClustersByNeighborhood[selectedNeighborhood]);
         }
     });
 });
