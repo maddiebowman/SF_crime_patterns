@@ -73,7 +73,7 @@ Data featured on the interactive city map is pulled from a random sample, stored
 ![Flask Heat Map](./images/heatmap_flask.png)
 
  #### Bubble Chart
- * Provides and animated way for the user to further visualize historical change for the selectected crime category
+ * Provides animation to further visualize historical change for the selectected crime category
 ![Flask Bubble Chart](./images/bubble_animation_over_time.png)
 
 ### San Francisco Crime Map
