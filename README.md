@@ -61,7 +61,7 @@ Data featured on the interactive city map is pulled from a random sample, stored
 ![Flask About Page](./images/api_endpoints_about_page.png)
 
  #### Interactive Bar Chart
- * Allows user to sort through common crime categories, selecting and visualizing the historical change for each specific crime type included.
+ * Allows user to sort through common crime categories, select and visualize historical data for each specific crime type
 ![Flask Interactive Bar Chart](./images/interactive_bar_chart.png)
 
  #### Heat Map
