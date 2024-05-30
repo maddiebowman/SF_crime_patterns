@@ -9,7 +9,9 @@ Provided are visualizations to help demonstrate the types of crime that are most
 #### Research Questions
 1. What are the safest neighborhoods in San Francisco? What are the least safe?
 2. How has overall crime in San Francisco changed since 2018? 
+
     a. Are different incidents more common now, than they were prior to 2020?
+
 3. What types of crime are most common throughout the city? 
 4. What time of day is crime most prevalent? What day of week is crime most prevalent?
 
@@ -46,7 +48,8 @@ Data featured on the interactive city map is pulled from a random sample, stored
 * Each page features a 'Back to Main Map' button, returning the user back to the homepage
 
 ##### Main Map View
-* The 'homepage' of our Flask App, allows the user an interactive way to search for crime reports throughout the City of San Francisco 
+* The 'homepage' of our Flask App
+* Allows user an interactive way to search for crime reports throughout the City of San Francisco 
 ![Main Map View - Flask Homepage](./images/main_map_flask_overview.png)
 
  #### Navigation header 
