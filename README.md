@@ -111,7 +111,11 @@ Data featured on the interactive city map is pulled from a random sample, stored
 
 ## Contributors
 Maddie Bowman - [maddiebowman](https://github.com/maddiebowman)
+
 Jinlu Wang - [moonsunkey](https://github.com/moonsunkey)
+
 Sakurako Kikuchi - [Sarah0215](https://github.com/Sarah0215)
+
 Justin Bein - [SamDamon1942](https://github.com/SamDamon1942)
+
 Brian Lee - [BrianLee0529](https://github.com/BrianLee0529)
