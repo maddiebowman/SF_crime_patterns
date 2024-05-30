@@ -50,18 +50,22 @@ Data featured on the interactive city map is pulled from a random sample, stored
 ##### Main Map View
 * The 'homepage' of our Flask App
 * Allows user an interactive way to search for crime reports throughout the City of San Francisco 
+
 ![Main Map View - Flask Homepage](./images/main_map_flask_overview.png)
 
  #### Navigation header 
  * Features drop down menus for further filtering marker clusters by crime category, year, and neighborhood
  * Includes navigation buttons to view the 'about' page and additional dynamic charts for analysis
+
 ![Flask Navigation](./images/dropdowns_navigation_bar.png)
  #### About Page - API Endpoints
  * Featured on the 'about' page is a list of API endpoints generated to reproduce data for each visualization
+
 ![Flask About Page](./images/api_endpoints_about_page.png)
 
  #### Interactive Bar Chart
  * Allows user to sort through crime categories, select and visualize historical data for each specific crime type
+
 ![Flask Interactive Bar Chart](./images/interactive_bar_chart.png)
 
  #### Heat Map
