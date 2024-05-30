@@ -15,21 +15,27 @@ Provided are visualizations to help demonstrate the types of crime that are most
 
 ## Instructions
 **→ open: *'data'* folder**
+
 **→ open: *'Police_Department_Incident_Reports.zip'*** 
+
 **→ file expands to: *'Police_Department_Incident_Reports.csv'***
+
 ****Necessary to proceed with steps 1-4***
 
 1. **Run analysis/data_cleaning.ipynb** to clean source data and export as a csv 
 2. **In terminal, run 'pyton db.py'** to create MongoDB database and necessary collections.
 3. **In terminal, run 'python app.py'** to launch the flask app and access the San Francisco Crime Dashboard.
-4. **Run analysis/crime_analysis.ipynb** for research analysis and results, and related visualizations to the crime data.
+4. **Run analysis/crime_analysis.ipynb** for research analysis, results, and related visualizations to the crime data.
 
 ### Data Source
 [**The San Francisco Police Department’s (SFPD) Incident Report Dataset**](https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783/data_preview) 
 
 Data is compiled from the department’s Crime Data Warehouse (CDW)
+
 → Provides information on incident reports filed by the SFPD in CDW, or filed by the public with the SFPD
+
 → Source data is updated daily 10:00am PST
+
 **Code does NOT currently account for new data as source data is updated*
 
 Data featured on the interactive city map is pulled from a random sample, stored and accessed using a MongoDB API endpoint
