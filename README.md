@@ -22,20 +22,48 @@ Provided are visualizations to help demonstrate the types of crime that are most
 1. **Run analysis/data_cleaning.ipynb** to clean source data and export as a csv 
 2. **In terminal, run 'pyton db.py'** to create MongoDB database and necessary collections.
 3. **In terminal, run 'python app.py'** to launch the flask app and access the San Francisco Crime Dashboard.
-4. **Run analysis/analysis.ipynb** for analysis, research question results, and related visualizations to the crime data.
+4. **Run analysis/crime_analysis.ipynb** for research analysis and results, and related visualizations to the crime data.
 
 ### Data Source
 [**The San Francisco Police Department’s (SFPD) Incident Report Dataset**](https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783/data_preview) 
 
 Data is compiled from the department’s Crime Data Warehouse (CDW)
 → Provides information on incident reports filed by the SFPD in CDW, or filed by the public with the SFPD
-→ Data is updated daily 10:00am PST
+→ Source data is updated daily 10:00am PST
 **Code does NOT currently account for new data as source data is updated*
 
-Data featured on the interactive city map is pulled from a random sample, stored and accessed using a MongoDB database.
+Data featured on the interactive city map is pulled from a random sample, stored and accessed using a MongoDB API endpoint
 
-### Visualizations
-#### San Francisco Crime Map
+### Data Visualizations 
+#### Flask App Design
+* Web application for visualizing and serving data end points for crime data analysis
+* Each page features a 'Back to Main Map' button, returning the user back to the homepage
+
+##### Main Map View
+* The 'homepage' of our Flask App, allows the user an interactive way to search for crime reports throughout the City of San Francisco 
+![Main Map View - Flask Homepage](./images/main_map_flask_overview.png)
+
+ #### Navigation header 
+ * Features drop down menus for further filtering marker clusters by crime category, year, and neighborhood
+ * Includes navigation buttons to view the 'about' page and additional dynamic charts for analysis
+![Flask Navigation](./images/dropdowns_navigation_bar.png)
+ #### About Page - API Endpoints
+ * Featured on the 'about' page is a list of API endpoints generated to reproduce data for each visualization
+![Flask About Page](./images/api_endpoints_about_page.png)
+
+ #### Interactive Bar Chart
+ * Allows user to sort through common crime categories, selecting and visualizing the historical change for each specific crime type included.
+![Flask Interactive Bar Chart](./images/interactive_bar_chart.png)
+
+ #### Heat Map
+ * Allows user to visualize the time of day when crime activity is considered 'extreme'
+![Flask Heat Map](./images/heatmap_flask.png)
+
+ #### Bubble Chart
+ * Provides and animated way for the user to further visualize historical change for the selectected crime category
+![Flask Bubble Chart](./images/bubble_animation_over_time.png)
+
+### San Francisco Crime Map
 * Displays markers of incidents reported throughout the city
 * Control created for toggling through data filtered by crime category
 
@@ -43,16 +71,41 @@ Data featured on the interactive city map is pulled from a random sample, stored
 ![San Francisco Neighborhood Boundaries](./images/leaflet_neighborhood_boundaries.png)
 * Hovering over marker clusters will reveal the neighborhood's boundary outline
 * Once clicked, the marker will display details on that specific incident report
-
 ![Crime Map Incident Markers](./images/leaflet_incident_markers.png)
 
-
-#### Least Safe Neighborhoods
-##### Bar Chart - Overall Incident Count by Neighborhood
+### Static Visualizations Produced in Jupyter Notebook
+#### Bar Chart
+**Overall Incident Count by Neighborhood**
  ![Overall Incident Count Bar Chart](./images/neighborhood_incidents_bar_chart.png)
- ##### Pie Chart - Highest Percentage of Incidents by Neighborhood (Top 15)
+
+#### Pie Chart
+**Highest Percentage of Incidents by Neighborhood**
  ![Neighborhood Pie Chart](./images/neighborhood_incidents_pie_chart.png)
 
+#### Stacked Bar Chart
+**Annual Crime Category Analysis**
+![Stacked Bar Chart](./images/Crime_Trends.png)
 
-### Resources
-Leaflet Marker Cluster Documentation: https://github.com/Leaflet/Leaflet.markercluster
+#### Line Chart
+**Annual Neighborhood Crime Analysis**
+![Neighborhood Pie Chart](./images/Trends_line_chart.png)
+
+
+#### Box Plot
+**Incident Time of Day Reported**
+![Neighborhood Pie Chart](./images/Incidents_timeofday.png)
+
+#### Box Plot
+**Incident Day of Week Reported**
+![Neighborhood Pie Chart](./images/Incidents_day_week.png)
+
+#### Heat Map
+**Incident Time / Day of Week Reported**
+![Neighborhood Pie Chart](./images/heatmap_sb.png)
+
+## Contributors
+Maddie Bowman - [maddiebowman](https://github.com/maddiebowman)
+Jinlu Wang - [moonsunkey](https://github.com/moonsunkey)
+Sakurako Kikuchi - [Sarah0215](https://github.com/Sarah0215)
+Justin Bein - [SamDamon1942](https://github.com/SamDamon1942)
+Brian Lee - [BrianLee0529](https://github.com/BrianLee0529)
