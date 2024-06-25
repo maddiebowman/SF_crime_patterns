@@ -49,7 +49,7 @@ def load_csv_to_mongodb(csv_file_path, collection_name):
     print(f"The '{collection_name}' collection now contains {document_count} documents.")
 
 # Load data into incidents_full collection
-load_csv_to_mongodb('data/crime_new02.csv', 'incidents_full')
+load_csv_to_mongodb('data/sf_crime_data.csv', 'incidents_full')
 
 # Load data into incidents collection
 load_csv_to_mongodb('data/sample_data_by_year.csv', 'incidents')
